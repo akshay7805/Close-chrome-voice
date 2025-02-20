@@ -10,7 +10,7 @@ def close_chrome():
 #function recording audio using sounddevice
 def record_audio(filename,Duration,samplerate=16000):
     print("recording...")
-    audio=sr.record(int(Duration*samplerate), samplerate=samplerate,channels=1,dtype='float32')
+    audio=sd.rec(int(Duration*samplerate), samplerate=samplerate,channels=1,dtype='float32')
     sd.wait() #wait until the recording
     sf.write(filename,audio,samplerate)
     print("recording is finished")
